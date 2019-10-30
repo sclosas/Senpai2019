@@ -6,6 +6,6 @@ const watsonVisualRecognitionController = require('../controllers/watsonVisualRe
 
 router.get('/helloworld', helloWorldController.helloWorld);
 
-router.post('/classify/image', watsonVisualRecognitionController.classifyImage);
+router.get('/classify/image', watsonVisualRecognitionController.classifyImage);
 
 module.exports = router;
