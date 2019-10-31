@@ -32,6 +32,9 @@ function reconocer() {
                 `
             });
 
+            // esto es un cambio de prueba
+            
+
             divRespuesta.innerHTML = `
 
             <h2>Resultados</h2>
