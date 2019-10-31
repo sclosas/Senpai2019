@@ -5,7 +5,7 @@ const { IamAuthenticator } = require('ibm-watson/auth');
 const visualRecognition = new VisualRecognitionV3({
     version: '2018-03-19',
     authenticator: new IamAuthenticator({
-        apikey: 'z9So0JhexqWHtVz_csEKWql0XxVFgKoRtf2G3dlzEom'
+        apikey: 'z9So0JhexqWHtVz_csEKWql0XxVFgKoRtf2G3dlzEom-'
     }),
     url: 'https://gateway.watsonplatform.net/visual-recognition/api',
 });
@@ -13,8 +13,10 @@ const visualRecognition = new VisualRecognitionV3({
 
 let classifyImage = async (req, res) => {
 
+    let files = req.files;
+
     const classifyParams = {
-        imagesFile: fs.createReadStream('./data/67.jpg'),
+        imagesFile: fs.createReadStream(files.imagen.path),
         owners: ['IBM', 'me']
     };
 

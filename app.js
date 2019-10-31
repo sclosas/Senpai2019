@@ -2,6 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const morgan = require('morgan');
+const multipart = require('connect-multiparty');
 
 const corsOptions = {
     methods: 'GET,PUT,POST,DELETE,OPTIONS',
@@ -17,7 +18,8 @@ const app = express();
 app.use(morgan('dev'));
 app.use(bodyParser.json());
 app.use(cors(corsOptions));
-//app.use(express.static(__dirname + "/public"));
+app.use(multipart());
+app.use(express.static(__dirname + "/public"));
 
 app.use('/api/v1', routes);
 
